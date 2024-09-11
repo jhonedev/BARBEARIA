@@ -39,6 +39,6 @@ public class Barbeiro extends Pessoa{
     }
 
     public void finalizarCorte() {
-        
+
     }
 }

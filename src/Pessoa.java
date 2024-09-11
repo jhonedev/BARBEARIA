@@ -8,7 +8,8 @@ public class Pessoa {
     private String telefone;
     private boolean acessouSistema;
     private boolean logadoSistema;
-    
+    private boolean admiministrador;
+
     public Pessoa(String nome, String sobrenome, int idade, String genero) {
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -16,12 +17,17 @@ public class Pessoa {
         this.genero = genero;
         this.logadoSistema = false;
         this.acessouSistema = false;
+        this.admiministrador = false;
     }
     
     public void acessarSistema() {
         acessouSistema = true;
         System.out.println("www.barbeariak8.com.br");
-        
+        System.out.println();
+
+        Corte.criarCortes();
+        Corte.imprimirCortesDisponiveis();
+        System.out.println();
     }
     
     public void login(String email, String senha) {
@@ -97,5 +103,9 @@ public class Pessoa {
     
     public boolean isLogadoSistema() {
         return logadoSistema;
+    }
+
+    public boolean isAdmiministrador() {
+        return admiministrador;
     }
 }

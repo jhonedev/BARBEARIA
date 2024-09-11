@@ -63,10 +63,6 @@ public class Cliente extends Pessoa {
         }
     }
 
-    public void combo() {
-        
-    }
-
     public void pagar() {
 
     }

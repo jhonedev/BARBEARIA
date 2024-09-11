@@ -16,16 +16,16 @@ public class Sistema {
         cliente1.login("mario@email.com", "mario123");
         cliente1.agendarCorteCabelo(1, barbeiro1);
 
-        cliente2.acessarSistema();
-        cliente2.login("jhone@email.com", "jhone123");
-        cliente2.agendarCorteBarba(1, barbeiro1);
+        // cliente2.acessarSistema();
+        // cliente2.login("jhone@email.com", "jhone123");
+        // cliente2.agendarCorteBarba(1, barbeiro1);
 
-        barbeiro1.acessarSistema();
-        barbeiro1.login("lucas@email.com", "lucas123");
-        barbeiro1.visualizarAgendaBarbeiro();
+        // barbeiro1.acessarSistema();
+        // barbeiro1.login("lucas@email.com", "lucas123");
+        // barbeiro1.visualizarAgendaBarbeiro();
 
-        barbeiro2.acessarSistema();
-        barbeiro2.login("jessica@email.com", "jessica123");
+        // barbeiro2.acessarSistema();
+        // barbeiro2.login("jessica@email.com", "jessica123");
     }
 
 }
