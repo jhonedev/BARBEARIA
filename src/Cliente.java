@@ -1,4 +1,5 @@
 public class Cliente extends Pessoa {
+    
     public Cliente(String nome, String sobrenome, int idade, String genero) {
         super(nome, sobrenome, idade, genero);
     }
@@ -10,12 +11,17 @@ public class Cliente extends Pessoa {
         cliente.setTelefone(telefone);
         return cliente;
     }
-    
-    public void agendarCorteCabelo(int horarioEscolhido, Barbeiro barbeiro) {
+
+    // quando escolher o corte, tem que mostrar qual o valor a ser pago
+    public void agendarCorteCabelo(Barbeiro barbeiro) {
         if (this.isLogadoSistema()) {
+            barbeiro.getAgenda().horariosDisponiveisBarbeiro();
+
+            int horarioEscolhido = barbeiro.getAgenda().escolherHorarioDisponivelBarbeiro();
+
             if (barbeiro.getAgenda().isDisponivel(horarioEscolhido)) {
-                System.out.println("Agendamento feito para " + Horario.getHorario(horarioEscolhido));
-                barbeiro.getAgenda().adicionarAgendamento(horarioEscolhido);;
+                System.out.println("Agendamento feito para " + Horario.getHorarioPorDigito(horarioEscolhido));
+                barbeiro.getAgenda().adicionarAgendamentoAgendaBarbeiro(horarioEscolhido);;
             }else {
                 System.out.println("Desculpe, mas nesse horário o barbeiro " + barbeiro.getNome() + " não está disponível.");
             }
@@ -24,11 +30,15 @@ public class Cliente extends Pessoa {
         }
     }
 
-    public void agendarCorteBarba(int horarioEscolhido, Barbeiro barbeiro) {
+    public void agendarCorteBarba(Barbeiro barbeiro) {
         if (this.isLogadoSistema()) {
+            barbeiro.getAgenda().horariosDisponiveisBarbeiro();
+
+            int horarioEscolhido = barbeiro.getAgenda().escolherHorarioDisponivelBarbeiro();
+
             if (barbeiro.getAgenda().isDisponivel(horarioEscolhido)) {
-                System.out.println("Agendamento feito para " + Horario.getHorario(horarioEscolhido));
-                barbeiro.getAgenda().adicionarAgendamento(horarioEscolhido);;
+                System.out.println("Agendamento feito para " + Horario.getHorarioPorDigito(horarioEscolhido));
+                barbeiro.getAgenda().adicionarAgendamentoAgendaBarbeiro(horarioEscolhido);;
             }else {
                 System.out.println("Desculpe, mas nesse horário o barbeiro " + barbeiro.getNome() + " não está disponível.");
             }
@@ -37,11 +47,15 @@ public class Cliente extends Pessoa {
         }
     }
 
-    public void agendarCorteBarbaCabelo(int horarioEscolhido, Barbeiro barbeiro) {
+    public void agendarCorteBarbaCabelo(Barbeiro barbeiro) {
         if (this.isLogadoSistema()) {
+            barbeiro.getAgenda().horariosDisponiveisBarbeiro();
+
+            int horarioEscolhido = barbeiro.getAgenda().escolherHorarioDisponivelBarbeiro();
+
             if (barbeiro.getAgenda().isDisponivel(horarioEscolhido)) {
-                System.out.println("Agendamento feito para " + Horario.getHorario(horarioEscolhido));
-                barbeiro.getAgenda().adicionarAgendamento(horarioEscolhido);;
+                System.out.println("Agendamento feito para " + Horario.getHorarioPorDigito(horarioEscolhido));
+                barbeiro.getAgenda().adicionarAgendamentoAgendaBarbeiro(horarioEscolhido);;
             }else {
                 System.out.println("Desculpe, mas nesse horário o barbeiro " + barbeiro.getNome() + " não está disponível.");
             }
@@ -50,11 +64,15 @@ public class Cliente extends Pessoa {
         }
     }
 
-    public void agendarCorteSobrancelha(int horarioEscolhido, Barbeiro barbeiro) {
+    public void agendarCorteSobrancelha(Barbeiro barbeiro) {
         if (this.isLogadoSistema()) {
+            barbeiro.getAgenda().horariosDisponiveisBarbeiro();
+
+            int horarioEscolhido = barbeiro.getAgenda().escolherHorarioDisponivelBarbeiro();
+
             if (barbeiro.getAgenda().isDisponivel(horarioEscolhido)) {
-                System.out.println("Agendamento feito para " + Horario.getHorario(horarioEscolhido));
-                barbeiro.getAgenda().adicionarAgendamento(horarioEscolhido);;
+                System.out.println("Agendamento feito para " + Horario.getHorarioPorDigito(horarioEscolhido));
+                barbeiro.getAgenda().adicionarAgendamentoAgendaBarbeiro(horarioEscolhido);;
             }else {
                 System.out.println("Desculpe, mas nesse horário o barbeiro " + barbeiro.getNome() + " não está disponível.");
             }

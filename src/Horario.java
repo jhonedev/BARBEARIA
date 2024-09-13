@@ -1,28 +1,51 @@
-public class Horario {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static String horariosParaAgendar() {        
-        String horarios = """
-            1 - 9h
-            2 - 9:30h
-            3 - 10h
-            4 - 10:30h
-            5 - 11h
-            6 - 11:30h
-            7 - 12h
-            """;
-        return horarios;
+public class Horario {
+    private int digito;
+    private String horario;
+    private static List<Horario> horariosBarbearia = new ArrayList<>();
+
+    public Horario(int digito, String horario) {
+        this.digito = digito;
+        this.horario = horario;
     }
 
-    public static String getHorario(int horario) {
-        switch (horario) {
-            case 1:return "9h";
-            case 2: return "9:30h";
-            case 3: return "10h";
-            case 4: return "10:30h";
-            case 5: return "11h";
-            case 6: return "11:30h";
-            case 7: return "12h";
-            default: return "Horario inválido";
+    public static void criarHorarios() {
+        horariosBarbearia.add(new Horario(1, "9h"));
+        horariosBarbearia.add(new Horario(2, "9:30h"));
+        horariosBarbearia.add(new Horario(3, "10h"));
+        horariosBarbearia.add(new Horario(4, "10:30h"));
+        horariosBarbearia.add(new Horario(5, "11h"));
+        horariosBarbearia.add(new Horario(6, "11:30h"));
+        horariosBarbearia.add(new Horario(7, "12h"));
+    }
+
+    public static void imprimirHorariosBarbearia() {
+        System.out.println("Horarios");
+        for (Horario horario : horariosBarbearia) {
+            System.out.println(horario.getDigito() + ": " + horario.getHorario());
         }
+    }
+
+    public static List<Horario> getHorariosBarbearia() {
+        return horariosBarbearia;
+    }
+
+    public static String getHorarioPorDigito(int digito) {
+        for (Horario horario : horariosBarbearia) {
+            if (horario.getDigito() == digito) {
+                return horario.getHorario();
+            }
+        }
+        return null;
+    }
+    
+    public int getDigito() {
+        return digito;
+    }
+
+    public String getHorario() {
+        return horario;
     }
 }

@@ -12,14 +12,17 @@ public class Corte {
     }
     
     public static void criarCortes() {
-        cortesDisponiveis.add(new Corte("Cabelo", 30));
-        cortesDisponiveis.add(new Corte("Barba", 30));
-        cortesDisponiveis.add(new Corte("Cabelo e Barba", 55));
-        cortesDisponiveis.add(new Corte("Sobracelhas", 10));
+        if (cortesDisponiveis.isEmpty()) {
+            cortesDisponiveis.add(new Corte("Cabelo", 30));
+            cortesDisponiveis.add(new Corte("Barba", 30));
+            cortesDisponiveis.add(new Corte("Cabelo e Barba", 55));
+            cortesDisponiveis.add(new Corte("Sobracelhas", 10));
+        }
     }
 
     public static void imprimirCortesDisponiveis() {
         System.out.println("Cortes disponiveis");
+        criarCortes();
         for (Corte corte : cortesDisponiveis) {
             System.out.println(corte.getNome() + ": " + " R$ " + corte.getPreco());
         }

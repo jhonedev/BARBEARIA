@@ -3,7 +3,7 @@ public class Barbeiro extends Pessoa{
 
     public Barbeiro(String nome, String sobrenome, int idade, String genero) {
         super(nome, sobrenome, idade, genero);
-        this.agenda = new Agenda();
+        this.agenda = new Agenda(this);
     }
 
     public static Barbeiro criarContaBarbeiro(String nome, String sobrenome, int idade, String genero, String email, String senha, String telefone) {
@@ -22,23 +22,11 @@ public class Barbeiro extends Pessoa{
         }
     }
 
-    public void cortarCabelo() {
-        
-    }
-    
-    public void cortarBarba() {
-        
-    }
-    
-    public void cortarSobrancelhas() {
-        
-    }
-    
-    public Agenda getAgenda() {
-        return agenda;
-    }
-
     public void finalizarCorte() {
 
+    }
+
+    public Agenda getAgenda() {
+        return agenda;
     }
 }

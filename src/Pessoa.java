@@ -24,10 +24,6 @@ public class Pessoa {
         acessouSistema = true;
         System.out.println("www.barbeariak8.com.br");
         System.out.println();
-
-        Corte.criarCortes();
-        Corte.imprimirCortesDisponiveis();
-        System.out.println();
     }
     
     public void login(String email, String senha) {
@@ -38,13 +34,8 @@ public class Pessoa {
         
         if (this.getEmail().equals(email) && this.getSenha().equals(senha)) {
             logadoSistema = true;
-            System.out.println("Login feito com sucesso");
-
-            // Exibe os horários apenas se a pessoa for um cliente usando o instanceof
-            if (this instanceof Cliente) {
-                System.out.println("Escolha um horario.");
-                System.out.println(Horario.horariosParaAgendar());
-            }
+            System.out.println(this.getNome() + " fez login com sucesso");
+            Corte.imprimirCortesDisponiveis();
         } else {
             System.out.println("Email ou senha estão incorretos. Tente novamente.");
         }
