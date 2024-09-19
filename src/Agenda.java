@@ -19,15 +19,16 @@ public class Agenda {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite o número correspondente ao horário desejado.");
         int horarioEscolhido = scanner.nextInt();
-
+    
+        // Verifica se o horário escolhido está na lista de horários disponíveis
         if (!isDisponivel(horarioEscolhido)) {
-            System.out.println("Desculpe, esse horário já está ocupado. Tente outro.");
-            return escolherHorarioDisponivelBarbeiro();
+            System.out.println("Número inválido. Escolha um horário que está na lista.");
+            return escolherHorarioDisponivelBarbeiro(); // Solicita a escolha novamente
         }
-
+    
         System.out.println("Horário " + Horario.getHorarioPorDigito(horarioEscolhido) + " selecionado com sucesso.");
         return horarioEscolhido;
-    }
+    }    
     
     public void agendaBarbeiro() {
         System.out.println("Horários ocupados.");
@@ -62,8 +63,11 @@ public class Agenda {
     }
     
     public boolean isDisponivel(int digitoHorario) {
-        return !horariosOcupadosBarbeiro.contains(digitoHorario);
+        // Verifica se o horário está na lista de horários disponíveis e não está ocupado
+        return Horario.getHorariosBarbearia().stream()
+                      .anyMatch(h -> h.getDigito() == digitoHorario) && !horariosOcupadosBarbeiro.contains(digitoHorario);
     }
+    
 
     public List<Integer> getAgendaBarbeiro() {
         return horariosOcupadosBarbeiro;

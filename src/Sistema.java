@@ -14,15 +14,17 @@ public class Sistema {
 
         cliente1.acessarSistema();
         cliente1.login("mario@email.com", "mario123");
-        cliente1.agendarCorteCabelo(barbeiro1);
+        cliente1.escolherCorte();
+        cliente1.escolherBarbeiro(Barbeiro.getBarbeiros());
 
         cliente2.acessarSistema();
         cliente2.login("jhone@email.com", "jhone123");
-        cliente2.agendarCorteCabelo(barbeiro1);
+        cliente2.escolherCorte();
+        cliente2.escolherBarbeiro(Barbeiro.getBarbeiros());
 
-        barbeiro1.acessarSistema();
-        barbeiro1.login("lucas@email.com", "lucas123");
-        barbeiro1.visualizarAgendaBarbeiro();
+        // barbeiro1.acessarSistema();
+        // barbeiro1.login("lucas@email.com", "lucas123");
+        // barbeiro1.visualizarAgendaBarbeiro();
 
         // barbeiro2.acessarSistema();
         // barbeiro2.login("jessica@email.com", "jessica123");
