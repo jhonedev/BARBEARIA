@@ -23,6 +23,7 @@ public class Pessoa {
     public void acessarSistema() {
         acessouSistema = true;
         System.out.println("www.barbeariak8.com.br");
+        Corte.imprimirCortesDisponiveis();
         System.out.println();
     }
     
@@ -35,7 +36,6 @@ public class Pessoa {
         if (this.getEmail().equals(email) && this.getSenha().equals(senha)) {
             logadoSistema = true;
             System.out.println(this.getNome() + " fez login com sucesso");
-            Corte.imprimirCortesDisponiveis();
         } else {
             System.out.println("Email ou senha estão incorretos. Tente novamente.");
         }
