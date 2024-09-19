@@ -7,7 +7,7 @@ public class Sistema {
         Barbeiro barbeiro2 = new Barbeiro("jessica", "borges", 33, "feminino");
 
         barbeiro1 = Barbeiro.criarContaBarbeiro("lucas", "santos", 31, "masculino", "lucas@email.com", "lucas123","4848451");
-        barbeiro2 = Barbeiro.criarContaBarbeiro("jessica", "borges", 32, "jessica@email.com", "jessica123", "feminino", "3215479");
+        barbeiro2 = Barbeiro.criarContaBarbeiro("jessica", "borges", 32, "feminino", "jessica@email.com", "jessica123", "3215479");
 
         cliente1 = Cliente.criarContaCliente("mario", "vegara", 33, "masculino", "mario@email.com", "mario123", "123456");
         cliente2 = Cliente.criarContaCliente("jhone", "silva", 28, "masculino", "jhone@email.com", "jhone123", "2154598");
@@ -22,12 +22,12 @@ public class Sistema {
         cliente2.escolherCorte();
         cliente2.escolherBarbeiro(Barbeiro.getBarbeiros());
 
-        // barbeiro1.acessarSistema();
-        // barbeiro1.login("lucas@email.com", "lucas123");
-        // barbeiro1.visualizarAgendaBarbeiro();
+        barbeiro1.acessarSistema();
+        barbeiro1.login("lucas@email.com", "lucas123");
+        barbeiro1.visualizarAgendaBarbeiro();
 
-        // barbeiro2.acessarSistema();
-        // barbeiro2.login("jessica@email.com", "jessica123");
+        barbeiro2.acessarSistema();
+        barbeiro2.login("jessica@email.com", "jessica123");
     }
 
 }

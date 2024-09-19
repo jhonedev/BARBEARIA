@@ -23,7 +23,12 @@ public class Pessoa {
     public void acessarSistema() {
         acessouSistema = true;
         System.out.println("www.barbeariak8.com.br");
-        Corte.imprimirCortesDisponiveis();
+
+        // Usando instanceof para verificar o tipo de pessoa
+        if (this instanceof Cliente || !(this instanceof Barbeiro)) {
+            Corte.imprimirCortesDisponiveis();
+        }
+
         System.out.println();
     }
     

@@ -44,37 +44,42 @@ public class Cliente extends Pessoa {
     
 
     public void escolherBarbeiro(List<Barbeiro> barbeiros) {
-        if (this.corteEscolhido == null) {
-            System.out.println("Você precisa escolher um corte antes de selecionar um barbeiro.");
-            return;
-        }
-    
-        System.out.println("Barbeiros disponíveis para " + this.corteEscolhido.getNome() + ":");
-        for (int i = 0; i < barbeiros.size(); i++) {
-            System.out.println((i + 1) + ": " + barbeiros.get(i).getNome());
-        }
-    
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Escolha o barbeiro pelo número:");
-        int barbeiroEscolhido = -1;
-        boolean escolhaValida = false;
-    
-        while (!escolhaValida) {
-            try {
-                barbeiroEscolhido = scanner.nextInt();
-                if (barbeiroEscolhido < 1 || barbeiroEscolhido > barbeiros.size()) {
-                    System.out.println("Número inválido. Escolha um barbeiro que está na lista.");
-                } else {
-                    escolhaValida = true;
-                }
-            } catch (Exception e) {
-                System.out.println("Entrada inválida. Digite um número.");
-                scanner.next();  // Limpa a entrada inválida
+        if (isLogadoSistema()) {
+            if (this.corteEscolhido == null) {
+                System.out.println("Você precisa escolher um corte antes de selecionar um barbeiro.");
+                return;
             }
+        
+            System.out.println("Barbeiros disponíveis para " + this.corteEscolhido.getNome() + ":");
+            for (int i = 0; i < barbeiros.size(); i++) {
+                System.out.println((i + 1) + ": " + barbeiros.get(i).getNome());
+            }
+        
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Escolha o barbeiro pelo número:");
+            int barbeiroEscolhido = -1;
+            boolean escolhaValida = false;
+        
+            while (!escolhaValida) {
+                try {
+                    barbeiroEscolhido = scanner.nextInt();
+                    if (barbeiroEscolhido < 1 || barbeiroEscolhido > barbeiros.size()) {
+                        System.out.println("Número inválido. Escolha um barbeiro que está na lista.");
+                    } else {
+                        escolhaValida = true;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Entrada inválida. Digite um número.");
+                    scanner.next();  // Limpa a entrada inválida
+                }
+            }
+        
+            Barbeiro barbeiro = barbeiros.get(barbeiroEscolhido - 1);
+            agendarCorte(barbeiro);  // Chama o método de agendamento após escolher o barbeiro
+        }else {
+            System.out.println("Você precisa estar logado para poder escolher o barbeiro.");
         }
-    
-        Barbeiro barbeiro = barbeiros.get(barbeiroEscolhido - 1);
-        agendarCorte(barbeiro);  // Chama o método de agendamento após escolher o barbeiro
+        
     }
     
 
